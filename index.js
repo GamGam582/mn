@@ -5,7 +5,7 @@ const app = express();
 
 function startBot() {
   const bot = mineflayer.createBot({
-    host: '0l7iss.aternos.me',
+    host: 'ol7iss.aternos.me', // تأكد من كتابة العنوان صحيح بدون صفر أو l
     port: 31911,
     username: 'Player' + Math.floor(Math.random() * 1000)
   });
@@ -29,6 +29,7 @@ function startBot() {
 }
 
 startBot();
+
 app.get("/", (req, res) => {
   res.send("✅ Minecraft bot is running!");
 });
