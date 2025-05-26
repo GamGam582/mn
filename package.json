@@ -1,13 +1,13 @@
 {
   "name": "minecraft-smart-bot",
-  "version": "2.0.0",
-  "description": "A human-like Minecraft AFK bot for Aternos",
+  "version": "1.0.0",
+  "description": "A smart Minecraft AFK bot with express server for Railway",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
-    "mineflayer": "^4.9.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mineflayer": "^4.9.1"
   }
 }
