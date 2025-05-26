@@ -10,10 +10,6 @@ function randomAction(bot) {
       const pitch = (Math.random() - 0.5) * Math.PI;
       bot.look(yaw, pitch);
     },
-    () => {
-      const msgs = ['hello', 'nice base', 'need help?', 'yo', 'mining...', 'wait me'];
-      bot.chat(msgs[Math.floor(Math.random() * msgs.length)]);
-    },
     () => bot.setControlState('sprint', true)
   ];
 
