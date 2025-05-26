@@ -1,5 +1,7 @@
 const mineflayer = require('mineflayer');
 const { randomAction } = require('./actions');
+const express = require('express');
+const app = express();
 
 function startBot() {
   const bot = mineflayer.createBot({
@@ -27,3 +29,11 @@ function startBot() {
 }
 
 startBot();
+app.get("/", (req, res) => {
+  res.send("✅ Minecraft bot is running!");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🌐 Web server is listening on port ${PORT}`);
+});
