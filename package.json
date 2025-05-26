@@ -1,0 +1,12 @@
+{
+  "name": "minecraft-smart-bot",
+  "version": "2.0.0",
+  "description": "A human-like Minecraft AFK bot for Aternos",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.9.1"
+  }
+}
