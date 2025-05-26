@@ -1,16 +1,19 @@
 const mineflayer = require('mineflayer');
+const express = require('express');
 const { randomAction } = require('./actions');
 const config = require('./config');
 
 function startBot() {
+  const username = `${config.usernamePrefix}${Math.floor(Math.random() * 1000)}`;
   const bot = mineflayer.createBot({
     host: config.host,
     port: config.port,
-    username: config.username
+    username
   });
 
   bot.on('spawn', () => {
     console.log(`[+] Bot ${bot.username} spawned`);
+
     setInterval(() => randomAction(bot), config.actionDelay);
   });
 
@@ -33,3 +36,15 @@ function startBot() {
 }
 
 startBot();
+
+// ويب سيرفر بسيط يعرض حالة البوت
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("✅ Minecraft bot is running!");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🌐 Web server listening on port ${PORT}`);
+});

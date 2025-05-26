@@ -18,15 +18,13 @@ function randomAction(bot) {
   ];
 
   const stopAll = () => {
-    ['forward', 'back', 'left', 'right', 'jump', 'sprint'].forEach(dir =>
-      bot.setControlState(dir, false)
-    );
+    ['forward', 'back', 'left', 'right', 'jump', 'sprint'].forEach(dir => bot.setControlState(dir, false));
   };
 
   stopAll();
   actions[Math.floor(Math.random() * actions.length)]();
 
-  setTimeout(stopAll, Math.random() * 4000 + 1000); // توقف بعد ثواني
+  setTimeout(stopAll, Math.random() * 4000 + 1000);
 }
 
 module.exports = { randomAction };
